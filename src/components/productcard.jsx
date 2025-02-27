@@ -1,27 +1,30 @@
-// src/cart/ProductCard.jsx
 import React from "react";
-import ViewProductButton from "../components/button";
+import Button from "../components/button";
 
-const ProductCard = () => {
+const Productcard = () => {
   // Static product details
-  const productImage = "https://via.placeholder.com/300"; // Placeholder image
-  const productName = "Wireless Headphones";
-  const productPrice = "$99.99";
+  const productImage = "https://via.placeholder.com/150"; // Placeholder image
+  const productName = "Sample Product";
+  const productPrice = "$49.99";
+
+  const handleViewProduct = () => {
+    alert("Viewing product details...");
+  };
 
   return (
-    <div className="max-w-sm bg-white shadow-lg rounded-lg p-5 border">
+    <div className="border rounded-lg p-4 shadow-lg max-w-xs">
       <img
         src={productImage}
         alt={productName}
-        className="w-full h-48 object-cover rounded-lg"
+        className="w-full h-40 object-cover rounded-md"
       />
-      <h2 className="text-lg font-semibold mt-3">{productName}</h2>
-      <p className="text-gray-600 font-medium mt-1">{productPrice}</p>
-      <div className="mt-4">
-        <ViewProductButton />
+      <h2 className="text-lg font-semibold mt-2">{productName}</h2>
+      <p className="text-gray-600">{productPrice}</p>
+      <div className="mt-3">
+        <Button onClick={handleViewProduct} text="View Product" />
       </div>
     </div>
   );
 };
 
-export default ProductCard;
+export default Productcard;
